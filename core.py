@@ -25,12 +25,12 @@ def get_images(fdir):
     :return: une suite d'images du dossier
     """
     images = []
-    pathlist = Path(dir).glob('**/*.[jpg][png]*')
+    pathlist = Path(fdir).glob('**/*.[jpg][png]*')
     for path in pathlist:
         image = str(path)
         images.append(image)
     return images
 
-images = get_images('Images')
-print(images)
-apply_filters(images)
+# images = get_images('Images')
+# print(images)
+# apply_filters(images)
