@@ -6,25 +6,26 @@ from pathlib import Path
 import os
 
 
-def apply_filters(images):
-    for imgpath in images:
-        gri = gray.gray_filter(imgpath)
-        dil = dilate.dilate_filter(imgpath,5)
-        blu = blur.blur_filter(imgpath,5)
-        if not os.path.exists("output"):
-            os.makedirs("output")
-        cv2.imwrite("output/blurry.jpg", blu)
-        cv2.imwrite("output/dilate.jpg", dil)
-        cv2.imwrite("output/gray.jpg", gri)
+def apply_filters(images,odir):
 
-def get_images(dir):
+    for imgpath in images:
+        image = cv2.imread(imgpath)
+        gri = gray.gray_filter(image)
+        dil = dilate.dilate_filter(gri,5)
+        blu = blur.blur_filter(dil,5)
+        if not os.path.exists(odir):
+            os.makedirs(odir)
+        name = os.path.basename(imgpath)
+        cv2.imwrite(f"output/{name}", blu)
+
+def get_images(fdir):
     """
     parcours le dossier et récupère les images
     :param dir: dossier à parcourir
     :return: une suite d'images du dossier
     """
     images = []
-    pathlist = Path(dir).glob('**/*.jpg')
+    pathlist = Path(dir).glob('**/*.[jpg][png]*')
     for path in pathlist:
         image = str(path)
         images.append(image)
