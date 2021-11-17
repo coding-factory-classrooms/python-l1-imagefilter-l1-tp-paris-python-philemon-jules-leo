@@ -12,7 +12,14 @@ def apply_filters(images,odir):
         image = cv2.imread(imgpath)
         gri = gray.gray_filter(image)
         dil = dilate.dilate_filter(gri,5)
-        blu = blur.blur_filter(dil,5)
+        blur_size = 5
+        try:
+            blu = blur.blur_filter(dil, blur_size)
+            cv2.imwrite("output/blurry.jpg", blu)
+        except cv2.error as e:
+            print(f'Even blur value detected. Actual value = {blur_size}. Suggested value: {blur_size + 1}')
+        if not os.path.exists("output"):
+            os.makedirs("output")
         if not os.path.exists(odir):
             os.makedirs(odir)
         name = os.path.basename(imgpath)
