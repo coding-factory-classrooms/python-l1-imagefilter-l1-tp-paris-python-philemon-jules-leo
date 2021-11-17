@@ -1,10 +1,11 @@
 from datetime import datetime
-import configparser
-from CLI import conf
 
-config = configparser.ConfigParser()
-config.read()
-log_file = conf['log_file']
+
+log_file = None
+
+def init_log(log_filepath):
+    global log_file
+    log_file = log_filepath
 
 def log(msg):
 

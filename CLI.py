@@ -4,13 +4,18 @@ import logger as l
 import configparser
 
 config = configparser.ConfigParser()
+
 config.read('config.ini')
+
 args = sys.argv
+
 conf = {"input": '',
         'output': '',
         'filters': '',
         'log_file': config['DEFAULT']['log_file']
         }
+
+l.init_log(conf['log_file'])
 
 for i, arg in enumerate(args):
     if arg == '-i':
