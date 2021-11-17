@@ -11,19 +11,20 @@ def apply_filters(images,odir):
     for imgpath in images:
         image = cv2.imread(imgpath)
         gri = gray.gray_filter(image)
-        dil = dilate.dilate_filter(gri,5)
+        dil = dilate.dilate_filter(gri, 5)
         blur_size = 5
-        try:
-            blu = blur.blur_filter(dil, blur_size)
-            cv2.imwrite("output/blurry.jpg", blu)
-        except cv2.error as e:
-            print(f'Even blur value detected. Actual value = {blur_size}. Suggested value: {blur_size + 1}')
-        if not os.path.exists("output"):
-            os.makedirs("output")
+        if blur_size > 0:
+            try:
+                blu = blur.blur_filter(dil, blur_size)
+                cv2.imwrite("output/blurry.jpg", blu)
+                name = os.path.basename(imgpath)
+                cv2.imwrite(f"output/{name}", blu)
+            except cv2.error as e:
+                print(f'Even blur value detected. Actual value = {blur_size}. Suggested value: {blur_size + 1}')
+        else:
+            print(f'Negative blur value detected. Actual value = {blur_size}. Please input a positive uneven number.')
         if not os.path.exists(odir):
             os.makedirs(odir)
-        name = os.path.basename(imgpath)
-        cv2.imwrite(f"output/{name}", blu)
 
 def get_images(fdir):
     """
@@ -31,12 +32,15 @@ def get_images(fdir):
     :param dir: dossier à parcourir
     :return: une suite d'images du dossier
     """
-    images = []
-    pathlist = Path(fdir).glob('**/*.[jpg][png]*')
-    for path in pathlist:
-        image = str(path)
-        images.append(image)
-    return images
+    if os.path.exists(fdir):
+        images = []
+        pathlist = Path(fdir).glob('**/*.[jpg][png]*')
+        for path in pathlist:
+            image = str(path)
+            images.append(image)
+        return images
+    else:
+        print(f'Input file name not found. Are you sure this file exists? {fdir}')
 
 # images = get_images('Images')
 # print(images)
