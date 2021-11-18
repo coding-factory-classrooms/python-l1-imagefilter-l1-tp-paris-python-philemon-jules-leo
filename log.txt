@@ -150,3 +150,30 @@
 2021/11/18 12:09:49 - successfully applied zeTeam filter on conflits.jpg
 2021/11/18 12:09:49 - successfully applied zeTeam filter on crtlz.jpg
 2021/11/18 12:09:49 - successfully applied zeTeam filter on bigbrain.jpg
+2021/11/18 12:26:13 - the argument for the input file has been taken
+2021/11/18 12:26:13 - the argument for the outpout file has been taken
+2021/11/18 12:26:13 - the argument for the filters has been taken
+2021/11/18 12:26:13 - the images has been successfully taken
+2021/11/18 12:26:13 - successfully applied zeTeam filter on conflits.jpg
+2021/11/18 12:34:51 - the argument for the input file has been taken
+2021/11/18 12:34:51 - the argument for the outpout file has been taken
+2021/11/18 12:34:51 - the argument for the filters has been taken
+2021/11/18 12:34:51 - the images has been successfully taken
+2021/11/18 12:40:24 - the argument for the input file has been taken
+2021/11/18 12:40:24 - the argument for the outpout file has been taken
+2021/11/18 12:40:24 - the argument for the filters has been taken
+2021/11/18 12:40:24 - the images has been successfully taken
+2021/11/18 12:40:43 - the argument for the input file has been taken
+2021/11/18 12:40:43 - the argument for the outpout file has been taken
+2021/11/18 12:40:43 - the argument for the filters has been taken
+2021/11/18 12:40:43 - the images has been successfully taken
+2021/11/18 12:40:43 - successfully applied zeTeam filter on conflits.jpg
+2021/11/18 12:40:43 - successfully applied zeTeam filter on crtlz.jpg
+2021/11/18 12:40:43 - successfully applied zeTeam filter on bigbrain.jpg
+2021/11/18 12:41:17 - the argument for the input file has been taken
+2021/11/18 12:41:17 - the argument for the outpout file has been taken
+2021/11/18 12:41:17 - the argument for the filters has been taken
+2021/11/18 12:41:17 - the images has been successfully taken
+2021/11/18 12:41:17 - successfully applied zeTeam filter on conflits.jpg
+2021/11/18 12:41:17 - successfully applied zeTeam filter on crtlz.jpg
+2021/11/18 12:41:17 - successfully applied zeTeam filter on bigbrain.jpg
