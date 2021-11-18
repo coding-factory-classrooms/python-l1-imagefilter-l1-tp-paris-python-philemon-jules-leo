@@ -1,0 +1,52 @@
+2021/11/18 12:33:00 - the arguments used are those of the config file
+2021/11/18 12:33:00 - the images has been successfully taken
+2021/11/18 12:33:00 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:33:00 - the blur filter has been successfully applied on the picture conflits.jpg 
+2021/11/18 12:33:00 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:33:00 - the blur filter has been successfully applied on the picture crtlz.jpg 
+2021/11/18 12:33:00 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 12:33:00 - the blur filter has been successfully applied on the picture bigbrain.jpg 
+2021/11/18 12:33:30 - the argument for the filters has been taken
+2021/11/18 12:33:30 - the arguments used are those of the config file
+2021/11/18 12:33:30 - the images has been successfully taken
+2021/11/18 12:33:30 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:33:30 - the blur filter has been successfully applied on the picture conflits.jpg 
+2021/11/18 12:33:30 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:33:30 - the blur filter has been successfully applied on the picture crtlz.jpg 
+2021/11/18 12:33:30 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 12:33:30 - the blur filter has been successfully applied on the picture bigbrain.jpg 
+2021/11/18 12:36:17 - the argument for the filters has been taken
+2021/11/18 12:36:17 - the arguments used are those of the config file
+2021/11/18 12:36:17 - the images has been successfully taken
+2021/11/18 12:36:17 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:36:17 - the blur filter has been successfully applied on the picture conflits.jpg 
+2021/11/18 12:36:17 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:36:17 - the blur filter has been successfully applied on the picture crtlz.jpg 
+2021/11/18 12:36:17 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 12:36:17 - the blur filter has been successfully applied on the picture bigbrain.jpg 
+2021/11/18 12:37:15 - the argument for the filters has been taken
+2021/11/18 12:37:15 - the arguments used are those of the config file
+2021/11/18 12:37:15 - the images has been successfully taken
+2021/11/18 12:37:15 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:37:15 - the blur filter has been successfully applied on the picture conflits.jpg 
+2021/11/18 12:37:15 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:37:15 - the blur filter has been successfully applied on the picture crtlz.jpg 
+2021/11/18 12:37:15 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 12:37:15 - the blur filter has been successfully applied on the picture bigbrain.jpg 
+2021/11/18 12:37:46 - the argument for the filters has been taken
+2021/11/18 12:37:46 - the arguments used are those of the config file
+2021/11/18 12:37:46 - the argument for the filters has been taken
+2021/11/18 12:37:46 - the images has been successfully taken
+2021/11/18 12:37:46 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:37:46 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:37:46 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 12:39:21 - the argument for the filters has been taken
+2021/11/18 12:39:21 - the arguments used are those of the config file
+2021/11/18 12:39:21 - the argument for the filters has been taken
+2021/11/18 12:39:21 - the images has been successfully taken
+2021/11/18 12:39:21 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:39:21 - the dilate filter has been successfully applied on the picture conflits.jpg
+2021/11/18 12:39:21 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:39:21 - the dilate filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 12:39:21 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 12:39:21 - the dilate filter has been successfully applied on the picture bigbrain.jpg
