@@ -41,8 +41,10 @@ def apply_filters(images, odir, filters):
                 else:
                     print('il manque un argument')
             elif filter_name == 'zeTeam':
-                l.log(f'successfully applied zeTeam filter on {name}')
-                image = ZeTeam.zeTeam_filter(image)
+                if len(split) > 1:
+                    color = int(split[1],16)
+                    l.log(f'successfully applied zeTeam filter on {name}')
+                    image = ZeTeam.zeTeam_filter(image,color)
 
 
         # gri = gray.gray_filter(image)
