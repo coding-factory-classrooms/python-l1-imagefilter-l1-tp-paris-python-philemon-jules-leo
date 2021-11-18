@@ -109,14 +109,16 @@ for i, arg in enumerate(args):
         core.get_video(args[i + 1])
         if args[i + 2] == '-filters':
             l.log('the argument for the filters has been taken')
+            config.read(f'config.ini')
+            conf['output'] = config['DEFAULT']['output']
             conf['filters'] = args[i + 3]
             args_filter = conf['filters']
             arg_filter = args_filter.split('|')
             conf['input'] = core.get_image_video('output_video')
             image = conf['input']
-            core.apply_filters(image, 'output', arg_filter)
+            core.apply_filters(image, conf['output'], arg_filter)
         else:
-            image = core.get_image_video(args[i + 1])
+            print('the filters argument is missing')
 
 
 # inout existe ?
