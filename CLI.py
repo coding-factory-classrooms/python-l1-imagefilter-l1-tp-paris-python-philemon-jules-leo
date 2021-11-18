@@ -37,7 +37,7 @@ for i, arg in enumerate(args):
         conf['filters'] = config['DEFAULT']['filters']
     if arg == '-display_filters':
         l.log('diplaying filters')
-        print("available filters: grayscale | dilate:* | blur:* , replace * with a number to adjust filter intensity")
+        print("available filters: grayscale | zeTeam | dilate:* | blur:* , replace * with a number to adjust filter intensity")
 
 # inout existe ?
 
