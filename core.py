@@ -1,4 +1,5 @@
 import cv2
+from PIL import Image
 
 import logger as l
 from filtres import gray
@@ -7,6 +8,9 @@ from filtres import blur
 from filtres import ZeTeam
 from pathlib import Path
 import os
+import glob
+
+
 
 
 def apply_filters(images, odir, filters):
@@ -42,10 +46,9 @@ def apply_filters(images, odir, filters):
                     print('il manque un argument')
             elif filter_name == 'zeTeam':
                 if len(split) > 1:
-                    color = int(split[1],16)
+                    color = int(split[1], 16)
                     l.log(f'successfully applied zeTeam filter on {name}')
-                    image = ZeTeam.zeTeam_filter(image,color)
-
+                    image = ZeTeam.zeTeam_filter(image, color)
 
         # gri = gray.gray_filter(image)
         # dil = dilate.dilate_filter(gri,5)
@@ -60,10 +63,14 @@ def apply_filters(images, odir, filters):
         output_file = f"{odir}/{name}"
         cv2.imwrite(output_file, image)
 
+    # name = nom du dossier output
+    # odir = chemin d'accès
+
+
 def get_images(fdir):
     """
     parcours le dossier et récupère les images
-    :param dir: dossier à parcourir
+    :param fdir: dossier à parcourir
     :return: une suite d'images du dossier
     """
     images = []
@@ -73,6 +80,29 @@ def get_images(fdir):
         image = str(path)
         images.append(image)
     return images
+
+
+def make_gif(odir):
+    frames = [Image.open(image) for image in glob.glob(f"{odir}/*.jpg")]
+    frame_one = frames[0]
+    frame_one.save("filtered_images.gif", format="GIF", append_images=frames,
+                   save_all=True, duration=1000, loop=0)
+
+    # frames = []
+    # odir = os.listdir(odir)
+    # for gif in odir:
+    #     if not gif.endswith('.jpg'):
+    #         odir.remove(gif)
+    #
+    # # pathlist2 = Path(odir).glob('**/*.[jpg][png]*')
+    # # print(pathlist2)
+    # for gif in odir:
+    #     # frame = str(gif)
+    #     frames.append(gif)
+    #     print(frames)
+    # frame_one = frames[0]
+    # frame_one = frame_one.save("my_awesome.gif", format="GIF", append_images=frames,
+    #             save_all=True, duration=100, loop=0)
 
 # images = get_images('Images')
 # print(images)
