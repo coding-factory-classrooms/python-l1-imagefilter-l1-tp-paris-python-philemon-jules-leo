@@ -9,6 +9,13 @@ import os
 
 
 def apply_filters(images, odir, filters):
+    """
+    applies filters on images from input file and writes the result in an output directory
+    :param images: array of images/path
+    :param odir: output file
+    :param filters: filters to be applied
+    :return: nothing
+    """
     for img_path in images:
         image = cv2.imread(img_path)
         name = os.path.basename(img_path)

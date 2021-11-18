@@ -80,3 +80,14 @@
 2021/11/17 23:07:50 - the blur filter has been successfully applied on the picture crtlz.jpg 
 2021/11/17 23:07:50 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
 2021/11/17 23:07:50 - the blur filter has been successfully applied on the picture bigbrain.jpg 
+2021/11/18 09:26:56 - the images has been successfully taken
+2021/11/18 09:27:35 - the argument for the input file has been taken
+2021/11/18 09:27:35 - the argument for the outpout file has been taken
+2021/11/18 09:27:35 - the images has been successfully taken
+2021/11/18 09:29:25 - the argument for the input file has been taken
+2021/11/18 09:29:25 - the argument for the outpout file has been taken
+2021/11/18 09:29:25 - the argument for the filters has been taken
+2021/11/18 09:29:25 - the images has been successfully taken
+2021/11/18 09:29:25 - the grayscale filter has been successfully applied on the picture conflits.jpg
+2021/11/18 09:29:25 - the grayscale filter has been successfully applied on the picture crtlz.jpg
+2021/11/18 09:29:25 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
