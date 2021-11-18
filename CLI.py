@@ -35,6 +35,9 @@ for i, arg in enumerate(args):
         conf['input'] = config['DEFAULT']['input']
         conf['output'] = config['DEFAULT']['output']
         conf['filters'] = config['DEFAULT']['filters']
+    if arg == '-display_filters':
+        l.log('diplaying filters')
+        print("available filters: grayscale | dilate:* | blur:* , replace * with a number to adjust filter intensity")
 
 # inout existe ?
 

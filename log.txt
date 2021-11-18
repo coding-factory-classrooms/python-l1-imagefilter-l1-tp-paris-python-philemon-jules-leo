@@ -91,3 +91,5 @@
 2021/11/18 09:29:25 - the grayscale filter has been successfully applied on the picture conflits.jpg
 2021/11/18 09:29:25 - the grayscale filter has been successfully applied on the picture crtlz.jpg
 2021/11/18 09:29:25 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
+2021/11/18 11:04:35 - diplaying filters
+2021/11/18 11:04:35 - the images has been successfully taken
