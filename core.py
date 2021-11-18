@@ -4,6 +4,7 @@ import logger as l
 from filtres import gray
 from filtres import dilate
 from filtres import blur
+from filtres import ZeTeam
 from pathlib import Path
 import os
 
@@ -39,6 +40,10 @@ def apply_filters(images, odir, filters):
                     image = dilate.dilate_filter(image, pow)
                 else:
                     print('il manque un argument')
+            elif filter_name == 'zeTeam':
+                l.log(f'successfully applied zeTeam filter on {name}')
+                image = ZeTeam.zeTeam_filter(image)
+
 
         # gri = gray.gray_filter(image)
         # dil = dilate.dilate_filter(gri,5)
