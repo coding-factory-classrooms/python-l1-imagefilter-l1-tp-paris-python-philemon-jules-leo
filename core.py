@@ -74,6 +74,44 @@ def get_images(fdir):
         images.append(image)
     return images
 
-# images = get_images('Images')
-# print(images)
-# apply_filters(images)
+def get_video(dir):
+
+    cap = cv2.VideoCapture(dir)
+
+    if not os.path.exists('output_video'):
+        os.makedirs('output_video')
+
+    current_frame = 0
+
+    FPS = cap.get(cv2.CAP_PROP_FPS)
+    cap.set(cv2.CAP_PROP_FPS, FPS)
+
+    bool = True
+    while(bool):
+
+        ret, frame = cap.read()
+
+        name = './output_video/frame' + str(current_frame) + '.jpg'
+        print('Creating...' + name)
+        print(ret)
+        bool = ret
+        try:
+            cv2.imwrite(name, frame)
+        except:
+            continue
+
+        current_frame += 1
+
+    # cap.release()
+    # cv2.destroyAllWindows()
+
+
+def get_image_video(dir):
+
+    images = []
+    pathlist = Path(dir).glob('**/*.[jpg][png]*')
+    l.log('the images has been successfully taken')
+    for path in pathlist:
+        image = str(path)
+        images.append(image)
+    return images

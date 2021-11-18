@@ -33,8 +33,6 @@ args = sys.argv
 #     args = parser.parse_args()
 #
 #     if args.input:
-#         print(args.input)
-#         print(args.origine)
 #         l.log('the argument for the input file has been taken')
 #         conf["input"] = args.input
 #
@@ -98,9 +96,23 @@ for i, arg in enumerate(args):
         l.log('diplaying filters')
         print("available filters: grayscale | zeTeam | dilate:* | blur:* , replace * with a number to adjust filter intensity")
 
+    if arg == '-video':
+        core.get_video(args[i + 1])
+        if args[i + 2] == '-filters':
+            l.log('the argument for the filters has been taken')
+            conf['filters'] = args[i + 3]
+            args_filter = conf['filters']
+            arg_filter = args_filter.split('|')
+            conf['input'] = core.get_image_video('output_video')
+            image = conf['input']
+            core.apply_filters(image, 'output', arg_filter)
+        else:
+            image = core.get_image_video(args[i + 1])
+
+
 # inout existe ?
 
-args_filter = conf['filters']
-arg_filter = args_filter.split('|')
-images = core.get_images(conf["input"])
-core.apply_filters(images,conf['output'], arg_filter)
+# args_filter = conf['filters']
+# arg_filter = args_filter.split('|')
+# images = core.get_images(conf["input"])
+# core.apply_filters(images,conf['output'], arg_filter)

@@ -1,6 +1,7 @@
 ##custom
 .DS_Store
 output/
+log.txt
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
