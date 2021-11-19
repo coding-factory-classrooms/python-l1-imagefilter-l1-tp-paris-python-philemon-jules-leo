@@ -18,50 +18,7 @@ conf = {"input": '',
 
 l.init_log(conf['log_file'])
 args = sys.argv
-# def check_args():
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument('-origine', type=str, help='choose the origin file', default="")
-#     parser.add_argument('-i', '--input', help='initiate input argument')
-#     parser.add_argument('-output_path', type=str, help='choose the output file', default="")
-#     parser.add_argument('-o', '--output', help='initiate output argument')
-#     parser.add_argument('-filter_choice', type=str, help='choose the filters you want to use', default="")
-#     parser.add_argument('-f', '--filter', help='initiate filters argument')
-#     parser.add_argument('-config_file_choice', type=str, help='choose the config_file you want to use', default="")
-#     parser.add_argument('-c', '--config_file', help='initiate config_file argument')
-#     parser.add_argument('-l', '--log', help='show the whole log file')
-#
-#     args = parser.parse_args()
-#
-#     if args.input:
-#         print(args.input)
-#         print(args.origine)
-#         l.log('the argument for the input file has been taken')
-#         conf["input"] = args.input
-#
-#     elif args.output:
-#         print(args.output)
-#         l.log('the argument for the output file has been taken')
-#         conf["output"] = args.output_path
-#
-#     elif args.filter:
-#         l.log('the argument for the filters has been taken')
-#         conf["filters"] = args.filter_choice
-#
-#     elif args.config_file:
-#         l.log('the argument for the input file has been taken')
-#         config.read(f'{args.config_file_choice}')
-#         conf['input'] = config['DEFAULT']['input']
-#         conf['output'] = config['DEFAULT']['output']
-#         conf['filters'] = config['DEFAULT']['filters']
-#
-#     elif args.log:
-#         l.dump_log()
-#
-#     else:
-#         print('aucun argument spécifié')
-#
-# if __name__ == '__main__':
-#     check_args()
+
 
 
 

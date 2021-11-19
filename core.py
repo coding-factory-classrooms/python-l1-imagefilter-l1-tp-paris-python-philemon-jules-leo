@@ -45,16 +45,6 @@ def apply_filters(images, odir, filters):
                     color = int(split[1],16)
                     l.log(f'successfully applied zeTeam filter on {name}')
                     image = ZeTeam.zeTeam_filter(image,color)
-
-
-        # gri = gray.gray_filter(image)
-        # dil = dilate.dilate_filter(gri,5)
-        # blur_size = 5
-        # try:
-        #     blu = blur.blur_filter(dil, blur_size)
-        #     cv2.imwrite("output/blurry.jpg", blu)
-        # except cv2.error as e:
-        #     print(f'Even blur value detected. Actual value = {blur_size}. Suggested value: {blur_size + 1}')
         if not os.path.exists(odir):
             os.makedirs(odir)
         output_file = f"{odir}/{name}"
@@ -64,7 +54,7 @@ def get_images(fdir):
     """
     parcours le dossier et récupère les images
     :param dir: dossier à parcourir
-    :return: une suite d'images du dossier
+    :return: une suite d'images (chemin d'acces) du dossier
     """
     images = []
     pathlist = Path(fdir).glob('**/*.[jpg][png]*')

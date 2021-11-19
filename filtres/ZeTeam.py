@@ -1,6 +1,12 @@
 import cv2
 
 def zeTeam_filter(img,color):
+    """
+    applies a filter that writes text on an image
+    :param img: base image on which the filter will be applied
+    :param color: hexadecimal color
+    :return: image with filter applied
+    """
     title_text = "Philemon Jules Leo"
     title_font = cv2.FONT_HERSHEY_SIMPLEX
     title_color = color
