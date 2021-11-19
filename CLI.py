@@ -71,7 +71,7 @@ if args.log:
 
 if args.display_filters:
     l.log('diplaying filters')
-    print("available filters: grayscale | zeTeam | dilate:* | blur:* , replace * with a number to adjust filter intensity")
+    print(f_liste)
 
 if args.output_video:
     l.log('the argument for the output_video file has been taken')
