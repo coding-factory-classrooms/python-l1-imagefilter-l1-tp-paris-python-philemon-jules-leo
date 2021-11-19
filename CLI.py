@@ -10,7 +10,6 @@ from os.path import isfile, join
 import inspect
 import filtres
 
-
 f_liste=[]
 for name,value in inspect.getmembers(filtres,inspect.ismodule):
     f_liste.append(name)
@@ -29,6 +28,7 @@ conf = {"input": '',
 
 l.init_log(conf['log_file'])
 
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-i', '--input', type=str, help='initiate input argument')
@@ -36,13 +36,27 @@ parser.add_argument('-o', '--output', type=str,  help='initiate output argument'
 parser.add_argument('-f', '--filters', type=str, help='initiate filters argument')
 parser.add_argument('-c', '--config_file', type=str,  help='initiate config_file argument')
 parser.add_argument('-l', '--log', type=str,  help='show the whole log file')
-parser.add_argument('-d', '--display_filters', type=str,  help='show the filters available')
+parser.add_argument('-d', '--display_filters', action='store_true',  help='show the filters available')
 parser.add_argument('-v', '--video', type=str,  help='show the filters available')
 parser.add_argument('-O', '--output_video', type=str,  help='show the filters available')
 parser.add_argument('-g', '--gif', type=str,  help='transform the given image in gif')
 
 
 args = parser.parse_args()
+print(args)
+if not len(sys.argv) > 1:
+    comm = art.text2art("Commandes")
+    print("aucune commande détectées")
+    print(comm)
+    print("available commands :\n -i,--input,\n-o,--output,\n-f,--filters,\n-c,--config_file,\n-l,--log,\n-d,--display_filters,\n-v,--video,\n"
+          "-O,--output_video\n")
+if not args.input and not args.config_file:
+    l.log("no input directory specified")
+    print("please specify an input directory")
+
+if not args.output and not args.config_file:
+    l.log("no output directory specified")
+    print("please specify and output directory")
 
 if args.config_file:
 
@@ -98,10 +112,13 @@ if args.gif:
     core.make_gif(conf['output'], args.gif)
 
 else:
-    args_filter = conf['filters']
-    arg_filter = args_filter.split('|')
-    images = core.get_images(conf["input"])
-    core.apply_filters(images, conf['output'], arg_filter)
+    if conf['input'] != '' and conf['output'] != '':
+        args_filter = conf['filters']
+        arg_filter = args_filter.split('|')
+        images = core.get_images(conf["input"])
+        core.apply_filters(images, conf['output'], arg_filter)
+    else:
+        print("il n'y a pas d'input et d'output spécifié")
 
 
 
