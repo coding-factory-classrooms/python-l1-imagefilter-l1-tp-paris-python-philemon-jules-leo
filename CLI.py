@@ -1,11 +1,21 @@
 
 import core
+import art
 import logger as l
 import configparser
 import argparse
+import sys
+from os import listdir
+from os.path import isfile, join
+import inspect
+import filtres
+
+
+f_liste=[]
+for name,value in inspect.getmembers(filtres,inspect.ismodule):
+    f_liste.append(name)
 
 config = configparser.ConfigParser()
-
 config.read('config.ini')
 
 

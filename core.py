@@ -2,7 +2,7 @@ import cv2
 from PIL import Image
 
 import logger as l
-from filtres import gray
+from filtres import grayscale
 from filtres import dilate
 from filtres import blur
 from filtres import ZeTeam
@@ -32,7 +32,7 @@ def apply_filters(images, odir, filters):
             filter_name = split[0]
             if filter_name in ['grayscale', 'greyscale']:
                 l.log(f'the grayscale filter has been successfully applied on the picture {name}')
-                image = gray.gray_filter(image)
+                image = grayscale.gray_filter(image)
             elif filter_name == 'blur':
                 if len(split) > 1 and split[1] != '' and int(split[1])%2 != 0:
                     pow = int(split[1])
