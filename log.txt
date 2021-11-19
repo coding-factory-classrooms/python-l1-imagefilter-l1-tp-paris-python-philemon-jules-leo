@@ -1,9 +1,0 @@
-2021/11/18 16:54:05 - the argument for the input file has been taken
-2021/11/18 16:54:05 - the images has been successfully taken
-2021/11/18 16:55:19 - the argument for the input file has been taken
-2021/11/18 16:55:19 - the argument for the outpout file has been taken
-2021/11/18 16:55:19 - the argument for the filters has been taken
-2021/11/18 16:55:19 - the images has been successfully taken
-2021/11/18 16:55:19 - the grayscale filter has been successfully applied on the picture conflits.jpg
-2021/11/18 16:55:19 - the grayscale filter has been successfully applied on the picture crtlz.jpg
-2021/11/18 16:55:19 - the grayscale filter has been successfully applied on the picture bigbrain.jpg
