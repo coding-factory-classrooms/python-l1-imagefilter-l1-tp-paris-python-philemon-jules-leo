@@ -95,7 +95,7 @@ def get_video(dir, odir):
         img = cv2.resize(image,(frame_width,frame_height))
         li.append(img)
         if i % 1 == 0:
-            write_img(f'{odir}{y}.jpg', li[i],odir)
+            write_img(f'{odir}{y:04}.jpg', li[i], odir)
             y += 1
         i += 1
 
@@ -115,11 +115,13 @@ def get_image_video(dir):
 
 def make_gif(odir, name):
     if os.path.exists(odir):
+        path = os.listdir(odir)
+        path.sort()
         frames = []
-        for file in os.listdir(odir):
+        for file in path:
             with Image.open(f"{odir}/{file}").convert('P') as x:
                 frames.append(x)
-        frames[0].save(f'{name}.gif', format='GIF', append_images=frames[0:], save_all = True, duration= 300, loop=0)
+        frames[0].save(f'{name}.gif', format='GIF', append_images=frames[0:], save_all=True, duration=50, loop=0)
     else:
         print("this directory don't exist")
-
+    #
