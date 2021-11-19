@@ -12,6 +12,8 @@ import glob
 
 
 
+def write_img(img_name, img, dir):
+    cv2.imwrite(f'{dir}/{img_name}', img)
 
 def apply_filters(images, odir, filters):
     """
@@ -37,7 +39,7 @@ def apply_filters(images, odir, filters):
                     l.log(f'the blur filter has been successfully applied on the picture {name} ')
                     image = blur.blur_filter(image, pow)
                 else:
-                    print('il manque un argument')
+                    print('il manque le chiffre de puissance pour le filtre / il doit être impaire et positif')
             elif filter_name == 'dilate':
                 if len(split) > 1:
                     l.log(f'the dilate filter has been successfully applied on the picture {name}')
@@ -49,31 +51,20 @@ def apply_filters(images, odir, filters):
                 if len(split) > 1:
                     color = int(split[1], 16)
                     l.log(f'successfully applied zeTeam filter on {name}')
-                    image = ZeTeam.zeTeam_filter(image, color)
-
-        # gri = gray.gray_filter(image)
-        # dil = dilate.dilate_filter(gri,5)
-        # blur_size = 5
-        # try:
-        #     blu = blur.blur_filter(dil, blur_size)
-        #     cv2.imwrite("output/blurry.jpg", blu)
-        # except cv2.error as e:
-        #     print(f'Even blur value detected. Actual value = {blur_size}. Suggested value: {blur_size + 1}')
+                    image = ZeTeam.zeTeam_filter(image,color)
         if not os.path.exists(odir):
             os.makedirs(odir)
         output_file = f"{odir}/{name}"
         cv2.imwrite(output_file, image)
         l.log(f'saving result image in {output_file}')
 
-    # name = nom du dossier output
-    # odir = chemin d'accès
 
 
 def get_images(fdir):
     """
     parcours le dossier et récupère les images
     :param fdir: dossier à parcourir
-    :return: une suite d'images du dossier
+    :return: une suite d'images (chemin d'acces) du dossier
     """
     images = []
     pathlist = Path(fdir).glob('**/*.[jpg][png]*')
@@ -84,34 +75,32 @@ def get_images(fdir):
 
 def get_video(dir, odir):
 
-    cap = cv2.VideoCapture(dir)
+    frame_width = 640
+    frame_height = 680
 
     if not os.path.exists(odir):
         os.makedirs(odir)
 
-    current_frame = 0
+    cap = cv2.VideoCapture(dir)
+    li = []
+    y = 0
+    i = 0
 
-    FPS = cap.get(cv2.CAP_PROP_FPS)
-    cap.set(cv2.CAP_PROP_FPS, FPS)
 
-    bool = True
-    while(bool):
+    while True:
+        success, image = cap.read()
+        if not success:
+            break
 
-        ret, frame = cap.read()
+        img = cv2.resize(image,(frame_width,frame_height))
+        li.append(img)
+        if i % 1 == 0:
+            write_img(f'{odir}{y}.jpg', li[i],odir)
+            y += 1
+        i += 1
 
-        name = f'./{odir}/frame' + str(current_frame) + '.jpg'
-        print('Creating...' + name)
-        bool = ret
-        try:
-            cv2.imwrite(name, frame)
-
-        except:
-            continue
-
-        current_frame += 1
-
-    cap.release()
-    cv2.destroyAllWindows()
+        if cv2.waitKey(1) and 0xFF == ord('q'):
+            break
 
 
 def get_image_video(dir):
@@ -124,28 +113,13 @@ def get_image_video(dir):
         images.append(image)
     return images
 
-def make_gif(odir):
-    frames = [Image.open(image) for image in glob.glob(f"{odir}/*.jpg")]
-    frame_one = frames[0]
-    frame_one.save("filtered_images.gif", format="GIF", append_images=frames,
-                   save_all=True, duration=1000, loop=0)
+def make_gif(odir, name):
+    if os.path.exists(odir):
+        frames = []
+        for file in os.listdir(odir):
+            with Image.open(f"{odir}/{file}").convert('P') as x:
+                frames.append(x)
+        frames[0].save(f'{name}.gif', format='GIF', append_images=frames[0:], save_all = True, duration= 300, loop=0)
+    else:
+        print("this directory don't exist")
 
-    # frames = []
-    # odir = os.listdir(odir)
-    # for gif in odir:
-    #     if not gif.endswith('.jpg'):
-    #         odir.remove(gif)
-    #
-    # # pathlist2 = Path(odir).glob('**/*.[jpg][png]*')
-    # # print(pathlist2)
-    # for gif in odir:
-    #     # frame = str(gif)
-    #     frames.append(gif)
-    #     print(frames)
-    # frame_one = frames[0]
-    # frame_one = frame_one.save("my_awesome.gif", format="GIF", append_images=frames,
-    #             save_all=True, duration=100, loop=0)
-
-# images = get_images('Images')
-# print(images)
-# apply_filters(images)

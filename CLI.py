@@ -13,7 +13,7 @@ conf = {"input": '',
         'output': '',
         'filters': '',
         'log_file': config['DEFAULT']['log_file'],
-        'type':'',
+        'type': '',
         'output_video':'',
         }
 
@@ -29,6 +29,7 @@ parser.add_argument('-l', '--log', type=str,  help='show the whole log file')
 parser.add_argument('-d', '--display_filters', type=str,  help='show the filters available')
 parser.add_argument('-v', '--video', type=str,  help='show the filters available')
 parser.add_argument('-O', '--output_video', type=str,  help='show the filters available')
+parser.add_argument('-g', '--gif', type=str,  help='transform the given image in gif')
 
 
 args = parser.parse_args()
@@ -82,6 +83,9 @@ if args.video:
             print('the filters argument is missing')
     else:
         print('the argument for the output_video file is missing')
+
+if args.gif:
+    core.make_gif(conf['output'], args.gif)
 
 else:
     args_filter = conf['filters']
