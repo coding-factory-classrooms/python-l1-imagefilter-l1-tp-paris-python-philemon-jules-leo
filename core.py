@@ -96,8 +96,6 @@ def get_video(dir):
 
         current_frame += 1
 
-    # cap.release()
-    # cv2.destroyAllWindows()
 
 
 def get_image_video(dir):
@@ -116,22 +114,3 @@ def make_gif(odir):
     frame_one.save("filtered_images.gif", format="GIF", append_images=frames,
                    save_all=True, duration=1000, loop=0)
 
-    # frames = []
-    # odir = os.listdir(odir)
-    # for gif in odir:
-    #     if not gif.endswith('.jpg'):
-    #         odir.remove(gif)
-    #
-    # # pathlist2 = Path(odir).glob('**/*.[jpg][png]*')
-    # # print(pathlist2)
-    # for gif in odir:
-    #     # frame = str(gif)
-    #     frames.append(gif)
-    #     print(frames)
-    # frame_one = frames[0]
-    # frame_one = frame_one.save("my_awesome.gif", format="GIF", append_images=frames,
-    #             save_all=True, duration=100, loop=0)
-
-# images = get_images('Images')
-# print(images)
-# apply_filters(images)
